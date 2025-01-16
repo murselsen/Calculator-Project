@@ -99,7 +99,7 @@ section {
 .app .history-list-container {
     background-color: #FADDB7;
     width: 220px;
-    height: 635px;
+    height: 100%;
 }
 
 .app .history-list-container .history-list {
@@ -117,11 +117,10 @@ section {
     background-color: #FADDB7;
     width: 360px;
     height: 100%;
-
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 60px;
 }
 
 .app-screen-container .screen {

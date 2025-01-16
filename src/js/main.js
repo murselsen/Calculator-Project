@@ -1,5 +1,4 @@
 const calValueSpan = document.querySelector('#calValue');
-const oneNumberSpan = document.querySelector('#oneNumber');
 const processSpan = document.querySelector('#process');
 const twoNumberSpan = document.querySelector('#twoNumber');
 let calValue = 0,
@@ -15,7 +14,7 @@ const setCalValue = value => {
     calValue = value;
   } else {
     calValue.toString();
-    if (calValue.length < 8) {
+    if (calValue.length < 10) {
       calValue += value;
     } else {
       calValue = calValue.slice(1);
@@ -25,9 +24,10 @@ const setCalValue = value => {
   document.getElementById('calValue').innerText = calValue;
 };
 const setAction = action => {
-  oneNumber = calValue;
-  oneNumberSpan.style.display = 'block';
   document.querySelector('#oneNumber').style.display = 'block';
+  oneNumber = calValue;
+  document.querySelector('#oneNumber').nodeValue = oneNumber;
+  // document.querySelector('#oneNumber').style.display = 'block';
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -49,7 +49,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   process.forEach(proc => {
     proc.addEventListener('click', e => {
+      document.querySelector('#oneNumber').innerText = e.target.innerText;
       console.log(e.target.innerText);
+
+      switch (e.target) {
+        case '%':
+          break;
+
+        default:
+          setAction(e.target.innerText);
+          break;
+      }
     });
   });
 });
