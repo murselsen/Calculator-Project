@@ -72,7 +72,10 @@ button {
     font-weight: 600;
     line-height: 47.74px;
 }
-
+button.y2{
+    width: 180px;
+    height: 90px;
+}
 button.x2 {
     width: 90px;
     height: 180px;
@@ -94,23 +97,46 @@ section {
 .app {
     display: flex;
     flex-direction: row-reverse;
+    height: 670px;
 }
 
 .app .history-list-container {
+    display: none;
     background-color: #FADDB7;
     width: 220px;
     height: 100%;
+    border-left: 1px solid gray;
 }
 
 .app .history-list-container .history-list {
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    height: 100%;
 }
 
 .app .history-list-container .history-list .history-item {
-    border: 1px solid red;
+    border-bottom: 1px solid gray;
     box-sizing: border-box;
-    padding: 10px;
+    padding-block: 20px;
+    padding-inline: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+     
+}    
+.app .history-list-container .history-list .history-item .history-process {
+    color:rgba(241, 153, 39, 0.8);
+    font-size: 25px;
+    font-weight: 600;
+    
+}
+.app .history-list-container .history-list .history-item .history-return {
+    color:rgba(241, 153, 39, 1);
+    font-size: 35px;
+    font-weight: 800;
+
 }
 
 .app-screen-container {
@@ -143,6 +169,10 @@ section {
     color: #F19927;
 }
 
+.app-screen-container .screen .header-container .icon {
+    cursor: pointer;
+}
+
 .app-screen-container .screen .value-container {
     display: flex;
     flex-direction: column;
@@ -164,6 +194,9 @@ section {
     font-size: 20px;
     font-weight: 400;
     color: rgba(241, 153, 39, 0.6);
+    display: flex;
+    gap:10px;
+    align-items: center;
 }
 
 .app-screen-container .screen .value-container .history span {
